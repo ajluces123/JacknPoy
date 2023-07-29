@@ -94,6 +94,8 @@ function choiceResults() {
        setInterval(reload,10000);
   }}
   else if (10 <= currents) {
+audio.pause()
+over.play()
      wrap.style.display = "none";
     alert("Computer WIN! The game will automatically refresh in 10 seconds");
   r.innerHTML = "GAME OVER!";
