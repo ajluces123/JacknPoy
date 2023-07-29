@@ -80,7 +80,7 @@ function choiceResults() {
   if (10 <= current) {
  wrap.style.display = "none";
    if (name.value == "") {
-      alert("Player 1 WIN! The game will automatically refresh in 10 seconds");     
+      alert("Player 1 WIN! The game will automatically refresh in 10 seconds");  
     r.innerHTML = "GAME OVER!";
     setInterval(reload,10000);
     win.style.display = "block";
@@ -95,10 +95,10 @@ function choiceResults() {
        setInterval(reload,10000);
   }}
   else if (10 <= currents) {
-audio.pause()
-over.play()
+     audio.pause()
      wrap.style.display = "none";
     alert("Computer WIN! The game will automatically refresh in 10 seconds");
+          over.play()
   r.innerHTML = "GAME OVER!";
         lose.style.display = "block";
          p.style.display = "none";
