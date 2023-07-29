@@ -7,6 +7,7 @@ var list = ["bato.png","papel.png","gunting.png"]; //list of images stored in ar
 var r = document.getElementById("result");
 var p = document.getElementById("demo");
 const audio = new Audio("pixel.mp3");
+const over = new Audio("over.mp3");
 const pt = document.querySelector(".p1");
 const p1 = document.getElementById("p-score");
 const c1 = document.getElementById("c-score");
