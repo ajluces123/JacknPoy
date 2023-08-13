@@ -45,13 +45,14 @@ function call_p1() {
 }
 function call_c1() {
   c1.innerHTML = currents;
-    c1.style.color = 'red';
+  c1.style.color = 'red';
 }
 
 function wins() {
   for (let i = 0; i <= 1; i++) {
     current += i;
     call_p1();
+    r.innerHTML = "win!";
     r.style.transform = "scale(1.2)";
     r.style.color = 'blue';
     r.style.transition = ".3s";
@@ -61,7 +62,9 @@ function wins() {
 function loses() {
   for (let i = 0; i <= 1; i++) {
     currents += i;
+      window.navigator.vibrate(500)
     call_c1();
+    r.innerHTML = "lose!";
     r.style.transform = "scale(1.2)";
     r.style.color = 'red';
     r.style.transition = ".3s";
@@ -79,6 +82,7 @@ function reload() {
 function choiceResults() {
   if (10 <= current) {
  wrap.style.display = "none";
+   window.navigator.vibrate(500)
    if (name.value == "") {
       alert("Player 1 WIN! The game will automatically refresh in 10 seconds");  
     r.innerHTML = "GAME OVER!";
@@ -88,6 +92,7 @@ function choiceResults() {
     }
     else {
   alert(name.value + " WIN! The game will automatically refresh in 10 seconds");
+    window.navigator.vibrate(500)
    wrap.style.display = "none";
   r.innerHTML = "GAME OVER!";
         win.style.display = "block";
@@ -95,10 +100,11 @@ function choiceResults() {
        setInterval(reload,10000);
   }}
   else if (10 <= currents) {
-     audio.pause()
      wrap.style.display = "none";
+       window.navigator.vibrate(500)
     alert("Computer WIN! The game will automatically refresh in 10 seconds");
           over.play()
+          audio.pause()
   r.innerHTML = "GAME OVER!";
         lose.style.display = "block";
          p.style.display = "none";
@@ -145,11 +151,9 @@ const bato = document.getElementById("bato").addEventListener('click', () => {
    draw()
   }
   else if (bot == list[1]) {
-   r.innerHTML = "paper";
    loses()
   }
   else if (bot == list[2]) {
-  r.innerHTML = "scissors";
     wins()
   }
   choiceResults()
@@ -170,11 +174,9 @@ if (bot == list[1]) {
   draw()
 }
 else if (bot == list[2]) {
- r.innerHTML = "scissors";
   loses()
 }
 else if (bot == list[0]) {
- r.innerHTML = "rock";
   wins()
 }
 choiceResults()
@@ -195,11 +197,9 @@ const gunting = document.getElementById("gunting").addEventListener('click', () 
     draw()
   }
   else if (bot == list[0]) {
-     r.innerHTML = "rock";
     loses()
   }
   else if (bot == list[1]) {
-     r.innerHTML = "paper";
     wins()
   }
   choiceResults()
